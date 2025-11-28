@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Zlecenia";
+}
+@model List<Zlecenie>
+
+
+<div class="container-fluid text-center box">
+    <h2 class="display-4">Zlecenia</h2>
+    <br />
+
+    <table class="table table-striped table-bordered table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Adres odbioru</th>
+                <th>Adres docelowy</th>
+                <th>Data zlecenia</th>
+                <th>Numer telefonu</th>
+                <th>Uwagi</th>
+                <th>Status</th>
+                <th>Zmien Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var zlecenie in Model)
+            {
+                <tr>
+                    <td>@zlecenie.Imie</td>
+                    <td>@zlecenie.Nazwisko</td>
+                    <td>@zlecenie.AdresOdbioru</td>
+                    <td>@zlecenie.AdresDostarczenia</td>
+                    <td>@zlecenie.DataZlecenia</td>
+                    <td>@zlecenie.NumerTelefonu</td>
+                    <td>@zlecenie.Uwagi</td>
+                    <td>@zlecenie.Status</td>
+                    @if (zlecenie.Status == "Zakończono")
+                    {
+                        <td></td>
+                    }else if (zlecenie.Status == "W trakcie")
+                    {
+                        <td><a asp-action="ZakonczZlecenie" asp-route-id="@zlecenie.Id">Zakończ</a></td>
+                    }else 
+                    {
+                        <td><a asp-action="ZacznijZlecenie" asp-route-id="@zlecenie.Id">Rozpocznij</a></td>
+                    }
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

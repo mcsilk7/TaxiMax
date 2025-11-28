@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Zamów Taxi";
+}
+
+@model TaxiMax.Models.Zlecenie
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Zamów Taxi</h2>
+    <p class="text-center text-muted mb-5">
+      Wypełnij formularz lub skontaktuj się z nami bezpośrednio.
+    </p>
+
+    <div class="row g-4">
+
+      <!-- Formularz zamówienia -->
+      <div class="col-12 col-md-7">
+        <div class="card shadow-sm p-4">
+          <form asp-action="ZamowTaxiForm" asp-controller="Zlecenia">
+
+              <input hidden type="numebr" name="Id" asp-for="Id"/>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Imię</label>
+              <input type="text" class="form-control" id="name" placeholder="Jan" asp-for="Imie" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Nazwisko</label>
+              <input type="text" class="form-control" id="surname" placeholder="Kowalski" asp-for="Nazwisko" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label">Telefon</label>
+              <input type="tel" class="form-control" id="phone" placeholder="+48 600 000 000" asp-for="NumerTelefonu" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="pickup" class="form-label">Adres odbioru</label>
+              <input type="text" class="form-control" id="pickup" placeholder="ul. Przykładowa 1, Warszawa" asp-for="AdresOdbioru" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="destination" class="form-label">Adres docelowy</label>
+              <input type="text" class="form-control" id="destination" placeholder="ul. Celowa 10, Warszawa" asp-for="AdresDostarczenia" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="datetime" class="form-label">Data i godzina</label>
+              <input type="datetime-local" class="form-control" id="datetime" asp-for="DataZlecenia" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="notes" class="form-label">Uwagi</label>
+              <textarea class="form-control" id="notes" rows="3" placeholder="np. fotelik dziecięcy" asp-for="Uwagi"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Wyślij zlecenie</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Alternatywy kontaktu -->
+      <div class="col-12 col-md-5 d-flex flex-column align-items-center justify-content-center">
+        <div class="mb-4 text-center">
+          <h5>Zadzwoń do nas</h5>
+          <a href="tel:+48600000000" class="display-6 text-decoration-none text-primary">+48 600 000 000</a>
+        </div>
+
+        <div class="text-center">
+          <h5>Pobierz aplikację</h5>
+          <!-- Tutaj wstaw swój QR kod -->
+          <img src="~/img/qr.png" alt="QR do aplikacji" class="img-fluid rounded shadow-sm">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

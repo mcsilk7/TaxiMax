@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid text-center tytul box">
+    <h1 class="display-4 white">Szybko. Bezpiecznie. Profesjonalnie. Twoje Taxi 24/7.</h1>
+    @if (User.Identity.IsAuthenticated){
+        <a class="btn btn-primary call-taxi" asp-action="ZamowTaxi">Zamów Taxi</a>
+    }
+    else
+    {
+        <a class="btn btn-primary call-taxi" asp-area="Identity" asp-page="/Account/Login">Zamów Taxi</a>
+    }
+
+</div>
+<section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center mb-4">
+        <div class="col-md-8">
+          <h2 class="mb-1">Dlaczego my?</h2>
+          <p class="mb-0 text-muted">Wybierz nas — sprawdzona jakość i wygoda przy każdym przejeździe.</p>
+        </div>
+      </div>
+
+        <!-- Dlaczego my -->
+
+      <div class="row g-4">
+        <!-- 1 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card feature-card text-center p-3 h-100">
+            <div class="mx-auto feature-icon bg-white" aria-hidden="true">
+              <i class="bi bi-taxi-front"></i>
+            </div>
+            <div class="card-body p-0 mt-3">
+              <h5 class="feature-title">Nowoczesna flota</h5>
+              <p class="feature-desc">Komfortowe i regularnie serwisowane samochody.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card feature-card text-center p-3 h-100">
+            <div class="mx-auto feature-icon bg-white" aria-hidden="true">
+              <i class="bi bi-clock"></i>
+            </div>
+            <div class="card-body p-0 mt-3">
+              <h5 class="feature-title">Dostępność 24/7</h5>
+              <p class="feature-desc">Jesteśmy dostępni zawsze, gdy nas potrzebujesz.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card feature-card text-center p-3 h-100">
+            <div class="mx-auto feature-icon bg-white" aria-hidden="true">
+              <i class="bi bi-person-badge"></i>
+            </div>
+            <div class="card-body p-0 mt-3">
+              <h5 class="feature-title">Profesjonalni kierowcy</h5>
+              <p class="feature-desc">Doświadczenie i wysoka kultura osobista.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card feature-card text-center p-3 h-100">
+            <div class="mx-auto feature-icon bg-white" aria-hidden="true">
+              <i class="bi bi-credit-card-2-back"></i>
+            </div>
+            <div class="card-body p-0 mt-3">
+              <h5 class="feature-title">Wygodne płatności</h5>
+              <p class="feature-desc">Karta, gotówka, BLIK — wybierz najwygodniejszą dla siebie opcję.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Opinie -->
+
+          <section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Opinie klientów</h2>
+
+    <div class="row g-4">
+
+      <!-- Opinia 1 -->
+      <div class="col-12 col-md-4">
+        <div class="p-4 bg-light rounded shadow-sm h-100">
+          <div class="mb-3 text-warning">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p>"Najlepsza firma! Kierowca przyjechał na czas, a samochód był bardzo czysty i komfortowy."</p>
+          <p class="fw-bold mb-0">— Anna K.</p>
+        </div>
+      </div>
+
+      <!-- Opinia 2 -->
+      <div class="col-12 col-md-4">
+        <div class="p-4 bg-light rounded shadow-sm h-100">
+          <div class="mb-3 text-warning">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+          </div>
+          <p>"Bardzo profesjonalna obsługa. Jeżdżę regularnie i zawsze jestem zadowolony."</p>
+          <p class="fw-bold mb-0">— Marek P.</p>
+        </div>
+      </div>
+
+      <!-- Opinia 3 -->
+      <div class="col-12 col-md-4">
+        <div class="p-4 bg-light rounded shadow-sm h-100">
+          <div class="mb-3 text-warning">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+          </div>
+          <p>"Bardzo szybki kontakt i świetne podejście do klienta. Polecam z całego serca!"</p>
+          <p class="fw-bold mb-0">— Katarzyna S.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
